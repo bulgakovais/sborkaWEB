@@ -1,0 +1,18 @@
+.hide {
+    display: none;
+}
+
+.colorText {
+    color: rgb(38, 94, 94);
+}
+
+.button{
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+.timeSet{
+    width: 50px;
+    margin-right: 20px;
+    font-size: 16px;
+}
