@@ -18,7 +18,7 @@ export function timerStart(event) {
             if (s == 0) {
                 if (m == 0) {
                     if (h == 0) {
-                        clearInterval(timer)
+                        timerStop(timer)
                         sound.play();
                         return;
                     }
@@ -46,4 +46,3 @@ export function timerStop() {
         timer = null;
     }
 }
-
