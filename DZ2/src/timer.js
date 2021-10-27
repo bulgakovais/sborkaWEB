@@ -1,14 +1,16 @@
+import { formatError } from "./utils.js";
 import { HowlToExport } from './howler.js'
 import soundSrc from '../sound.mp3'
 let sound = new HowlToExport({
     src: soundSrc
 });
-// export let sound = new HowlToExport({
-//     src: ['sound.mp3']
-// });
 
-// sound.src = soundSrc
+const start = document.querySelector('#startTimer')
+const stop = document.querySelector('#stopTimer')
+const err = document.querySelector('.error')
 
+start.addEventListener('click', timerStart)
+stop.addEventListener('click', timerStop)
 
 let timer = null;
 export function timerStart(event) {
@@ -22,6 +24,16 @@ export function timerStart(event) {
         let s = second.value
 
         timer = setInterval(() => {
+            err.innerHTML = ''
+            if (h | m | s < 0) {
+                hour.value = `00`
+                minute.value = `00`
+                second.value = `00`
+                err.innerHTML = formatError("Указанные числа не должны быть отрицательными");
+                timerStop(timer)
+                return
+            }
+
             if (s == 0) {
                 if (m == 0) {
                     if (h == 0) {
