@@ -1,7 +1,8 @@
 import { formatError } from "./utils.js";
-import { HowlToExport } from './howler.js'
+// import { HowlToExport } from './howler.js'// Таким образом подключаем библиотеку из скачанного howler.js
+import { Howl } from 'howler'
 import soundSrc from '../sound.mp3'
-let sound = new HowlToExport({
+let sound = new Howl({
     src: soundSrc
 });
 

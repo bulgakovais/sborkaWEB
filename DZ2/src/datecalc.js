@@ -1,4 +1,4 @@
-import { DateTime } from "./luxon.js";
+import { DateTime } from "luxon";
 import { formatError } from "./utils.js";
 
 const dateCalcForm = document.getElementById("datecalc");
